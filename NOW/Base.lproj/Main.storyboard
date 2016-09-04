@@ -3,9 +3,10 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--NOW‼️-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="ViewController" customModule="NOW" customModuleProvider="target" sceneMemberID="viewController">
@@ -30,7 +31,14 @@
                             <constraint firstItem="c3T-3X-l0t" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="u4C-ct-xmw"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="UwW-3i-tpv"/>
+                    <navigationItem key="navigationItem" title="NOW‼️" id="UwW-3i-tpv">
+                        <barButtonItem key="rightBarButtonItem" title="Item" systemItem="add" id="yro-LQ-Rci">
+                            <connections>
+                                <action selector="addButton:" destination="BYZ-38-t0r" id="Ubj-AO-lFp"/>
+                                <segue destination="C7r-Zu-YzV" kind="show" id="YrZ-2V-LVd"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableViewController" destination="c3T-3X-l0t" id="8jw-Vm-FWX"/>
                     </connections>
@@ -39,10 +47,10 @@
             </objects>
             <point key="canvasLocation" x="785" y="570"/>
         </scene>
-        <!--View Controller-->
+        <!--NOW‼️-->
         <scene sceneID="vxA-fx-CVo">
             <objects>
-                <viewController id="C7r-Zu-YzV" sceneMemberID="viewController">
+                <viewController id="C7r-Zu-YzV" customClass="taskReviewer" customModule="NOW" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hbY-a8-bPb"/>
                         <viewControllerLayoutGuide type="bottom" id="vr2-3T-gh4"/>
@@ -50,8 +58,57 @@
                     <view key="view" contentMode="scaleToFill" id="HYe-qY-g5u">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Important ⁉️" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IYO-PQ-6VC">
+                                <rect key="frame" x="211" y="262" width="179" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="179" id="Cwu-0p-6Iu"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="23"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Task?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="m33-Pq-FJY">
+                                <rect key="frame" x="90" y="159" width="399" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="98H-S2-XUc">
+                                <rect key="frame" x="225" y="364" width="139" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="OXO-dD-qxJ"/>
+                                    <constraint firstAttribute="width" constant="139" id="S4T-Ya-mmH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="22"/>
+                                <state key="normal" title="Add Task❓"/>
+                                <connections>
+                                    <action selector="addTask:" destination="C7r-Zu-YzV" eventType="touchUpInside" id="gW0-2E-Czo"/>
+                                </connections>
+                            </button>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="so0-5w-jjb">
+                                <rect key="frame" x="393" y="262" width="51" height="31"/>
+                            </switch>
+                        </subviews>
+                        <color key="backgroundColor" red="0.93852692842483521" green="0.38164073337104765" blue="0.88601613997437456" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="IYO-PQ-6VC" firstAttribute="top" secondItem="m33-Pq-FJY" secondAttribute="bottom" constant="73" id="0Oh-K0-5Zo"/>
+                            <constraint firstItem="m33-Pq-FJY" firstAttribute="leading" secondItem="HYe-qY-g5u" secondAttribute="leadingMargin" constant="70" id="1s2-E2-xPc"/>
+                            <constraint firstItem="98H-S2-XUc" firstAttribute="leading" secondItem="HYe-qY-g5u" secondAttribute="leading" constant="225" id="2Ka-2u-xah"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="m33-Pq-FJY" secondAttribute="trailing" constant="91" id="Anp-l3-oAk"/>
+                            <constraint firstItem="so0-5w-jjb" firstAttribute="bottom" secondItem="IYO-PQ-6VC" secondAttribute="bottom" id="arz-DU-tYR"/>
+                            <constraint firstItem="m33-Pq-FJY" firstAttribute="top" secondItem="hbY-a8-bPb" secondAttribute="bottom" constant="95" id="ct1-TA-MsE"/>
+                            <constraint firstItem="IYO-PQ-6VC" firstAttribute="top" secondItem="hbY-a8-bPb" secondAttribute="bottom" constant="198" id="e2P-hp-xa9"/>
+                            <constraint firstAttribute="trailing" secondItem="so0-5w-jjb" secondAttribute="trailing" constant="158" id="hQl-cO-HtL"/>
+                            <constraint firstItem="so0-5w-jjb" firstAttribute="leading" secondItem="IYO-PQ-6VC" secondAttribute="trailing" constant="3" id="odU-Bi-YJ2"/>
+                            <constraint firstItem="so0-5w-jjb" firstAttribute="top" secondItem="IYO-PQ-6VC" secondAttribute="top" id="sdm-ce-rDW"/>
+                            <constraint firstItem="98H-S2-XUc" firstAttribute="top" secondItem="IYO-PQ-6VC" secondAttribute="bottom" constant="71" id="vo8-jA-AGN"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="NOW‼️" id="UC3-HH-Z3A"/>
+                    <connections>
+                        <outlet property="importantSwitch" destination="so0-5w-jjb" id="htu-PD-V6f"/>
+                        <outlet property="taskTF" destination="m33-Pq-FJY" id="acg-rO-0mx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RTP-bg-j2v" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -73,7 +130,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eHo-1b-jCH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="291" y="1075"/>
+            <point key="canvasLocation" x="-156" y="570"/>
         </scene>
     </scenes>
 </document>
