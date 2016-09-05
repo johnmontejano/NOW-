@@ -15,6 +15,7 @@
 		1665103B1D7A877900A1DAF0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 166510391D7A877900A1DAF0 /* LaunchScreen.storyboard */; };
 		166510431D7CCEFA00A1DAF0 /* task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 166510421D7CCEFA00A1DAF0 /* task.swift */; };
 		166510491D7CDB3600A1DAF0 /* taskReviewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 166510481D7CDB3600A1DAF0 /* taskReviewer.swift */; };
+		1665104B1D7CE5AE00A1DAF0 /* completeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1665104A1D7CE5AE00A1DAF0 /* completeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		1665103C1D7A877900A1DAF0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		166510421D7CCEFA00A1DAF0 /* task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = task.swift; sourceTree = "<group>"; };
 		166510481D7CDB3600A1DAF0 /* taskReviewer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = taskReviewer.swift; sourceTree = "<group>"; };
+		1665104A1D7CE5AE00A1DAF0 /* completeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = completeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 				1665102F1D7A877900A1DAF0 /* ViewController.swift */,
 				166510481D7CDB3600A1DAF0 /* taskReviewer.swift */,
 				166510421D7CCEFA00A1DAF0 /* task.swift */,
+				1665104A1D7CE5AE00A1DAF0 /* completeViewController.swift */,
 				166510311D7A877900A1DAF0 /* Main.storyboard */,
 				166510371D7A877900A1DAF0 /* Assets.xcassets */,
 				166510391D7A877900A1DAF0 /* LaunchScreen.storyboard */,
@@ -150,6 +153,7 @@
 				166510301D7A877900A1DAF0 /* ViewController.swift in Sources */,
 				1665102E1D7A877900A1DAF0 /* AppDelegate.swift in Sources */,
 				166510491D7CDB3600A1DAF0 /* taskReviewer.swift in Sources */,
+				1665104B1D7CE5AE00A1DAF0 /* completeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

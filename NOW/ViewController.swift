@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var tableViewController: UITableView!
     var allTasks :[Task] = []
+    var selectedIndex = 0
     override func viewDidLoad() {
         super.viewDidLoad()
         allTasks = makeTask()
@@ -25,6 +26,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
         let task = allTasks[indexPath.row]
+        selectedIndex = indexPath.row
         if task.important{
             task.name = "!😁 \(task.name)"
         } else {
@@ -50,14 +52,24 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return [task1,task2,task3]
     }
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        var vc = segue.destinationViewController as! taskReviewer
-        vc.VC = self
+        if segue.identifier == "createTask" {
+            var vc = segue.destinationViewController as! taskReviewer
+            vc.VC = self
+        };if segue.identifier == "complete"{
+            var nextVC = segue.destinationViewController as! completeViewController
+            nextVC.task = sender as! Task
+            nextVC.VC = self
+        }
+    }
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let task = allTasks[indexPath.row]
+        performSegueWithIdentifier("complete", sender: task)
+        
     }
     //    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
     @IBAction func addButton(sender: AnyObject) {
     }
-    //        prepareForSegue(<#T##segue: UIStoryboardSegue##UIStoryboardSegue#>, sender: <#T##AnyObject?#>)
-    //    }
+
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

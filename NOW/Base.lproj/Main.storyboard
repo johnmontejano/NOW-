@@ -18,8 +18,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="c3T-3X-l0t">
-                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="c3T-3X-l0t">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                         </subviews>
@@ -35,12 +35,13 @@
                         <barButtonItem key="rightBarButtonItem" title="Item" systemItem="add" id="yro-LQ-Rci">
                             <connections>
                                 <action selector="addButton:" destination="BYZ-38-t0r" id="Ubj-AO-lFp"/>
-                                <segue destination="C7r-Zu-YzV" kind="show" id="YrZ-2V-LVd"/>
+                                <segue destination="C7r-Zu-YzV" kind="show" identifier="createTask" id="YrZ-2V-LVd"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tableViewController" destination="c3T-3X-l0t" id="8jw-Vm-FWX"/>
+                        <segue destination="Hy4-Jp-9ZD" kind="show" identifier="complete" id="HBF-LN-Qgd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -65,7 +66,7 @@
                                     <constraint firstAttribute="width" constant="179" id="Cwu-0p-6Iu"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="23"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Task?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="m33-Pq-FJY">
@@ -113,6 +114,53 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RTP-bg-j2v" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1499" y="570"/>
+        </scene>
+        <!--Complete View Controller-->
+        <scene sceneID="SbR-zv-AvH">
+            <objects>
+                <viewController id="Hy4-Jp-9ZD" customClass="completeViewController" customModule="NOW" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1nY-gh-twi"/>
+                        <viewControllerLayoutGuide type="bottom" id="xux-w0-zSQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="aKa-Qh-aLa">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ovI-yC-v6j">
+                                <rect key="frame" x="255" y="272" width="91" height="30"/>
+                                <state key="normal" title="Complete ⁉️"/>
+                                <connections>
+                                    <action selector="completeButton:" destination="Hy4-Jp-9ZD" eventType="touchUpInside" id="SJ5-Wa-Km2"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="lkdjfl" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8yY-79-m3c">
+                                <rect key="frame" x="46" y="103" width="508" height="127"/>
+                                <color key="backgroundColor" red="0.93852692842483521" green="0.46872914026053536" blue="0.35771134510543035" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="127" id="vmZ-4h-dqV"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="8yY-79-m3c" firstAttribute="top" secondItem="1nY-gh-twi" secondAttribute="bottom" constant="39" id="Ydk-wq-M0u"/>
+                            <constraint firstItem="8yY-79-m3c" firstAttribute="leading" secondItem="aKa-Qh-aLa" secondAttribute="leadingMargin" constant="26" id="dEq-h2-3Fr"/>
+                            <constraint firstItem="8yY-79-m3c" firstAttribute="centerX" secondItem="aKa-Qh-aLa" secondAttribute="centerX" id="hXl-8K-dmp"/>
+                            <constraint firstItem="ovI-yC-v6j" firstAttribute="top" secondItem="8yY-79-m3c" secondAttribute="bottom" constant="42" id="uVF-Vl-901"/>
+                            <constraint firstItem="8yY-79-m3c" firstAttribute="centerX" secondItem="ovI-yC-v6j" secondAttribute="centerX" id="uVw-Nx-HlL"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="taskLabel" destination="8yY-79-m3c" id="9z9-oD-Uy0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="g4z-y3-c8p" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1355" y="-122"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="cch-Ep-K6r">
